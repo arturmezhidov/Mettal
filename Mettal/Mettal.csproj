@@ -164,6 +164,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
     <Compile Include="Controllers\TableController.cs" />
     <Compile Include="Controllers\TargetController.cs" />
     <Compile Include="Controllers\MarkController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Models\Entities\Gost.cs" />
     <Compile Include="Models\Entities\Manual.cs" />
     <Compile Include="Models\Entities\ManualCategory.cs" />
+    <Compile Include="Models\Entities\Slide.cs" />
     <Compile Include="Models\ViewModels\ManualView.cs" />
     <Compile Include="Models\Entities\Mark.cs" />
     <Compile Include="Models\Entities\Product.cs" />
@@ -238,6 +240,7 @@
     <Compile Include="Models\ViewModels\ProductSchemaView.cs" />
     <Compile Include="Models\ViewModels\ProductSchemaViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductsView.cs" />
+    <Compile Include="Models\ViewModels\SlideViewModel.cs" />
     <Compile Include="Models\ViewModels\TargetView.cs" />
     <Compile Include="Models\ViewModels\TargetViewModel.cs" />
     <Compile Include="Models\ViewModels\MarkView.cs" />
@@ -761,6 +764,8 @@
     <Content Include="Views\Manual\Create.cshtml" />
     <Content Include="Views\Manual\Details.cshtml" />
     <Content Include="Views\Manual\Edit.cshtml" />
+    <Content Include="Views\Slider\Index.cshtml" />
+    <Content Include="Views\Slider\_SlideList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

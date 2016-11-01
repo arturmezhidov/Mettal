@@ -16,6 +16,7 @@ namespace Mettal.Models.DataAccess
         public virtual DbSet<Target> Targets { get; set; }
         public virtual DbSet<ManualCategory> ManualCategories { get; set; }
         public virtual DbSet<Manual> Manuals { get; set; }
+        public virtual DbSet<Slide> Slides { get; set; }
 
         public ApplicationDbContext()
             : base(AppConfig.ConnectionStringName, throwIfV1Schema: false)

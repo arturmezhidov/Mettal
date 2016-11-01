@@ -1,0 +1,28 @@
+﻿@model List<Mettal.Models.ViewModels.ManualCategoryViewModel>
+
+<h3>Слайды</h3>
+
+<div class="">
+    @using (Ajax.BeginForm("UpdateCategory", new AjaxOptions { UpdateTargetId = "manual-category-list", InsertionMode = InsertionMode.Replace, HttpMethod = "PUT" }))
+    {
+        @Html.AntiForgeryToken()
+
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="form-inline">
+                <div class="form-group col-md-6">
+                    @Html.HiddenFor(modelItem => Model[i].Id)
+                    @Html.EditorFor(modelItem => Model[i].Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+                </div>
+                @Html.ActionLink("Добавить статью", "Create", "Manual", new { id = Model[i].Id }, new { @class = "btn btn-success" })
+                @Ajax.ActionLink("Удалить", "DeleteCategory", new { id = Model[i].Id }, new AjaxOptions { UpdateTargetId = "manual-category-list", InsertionMode = InsertionMode.Replace, HttpMethod = "DELETE", Confirm = "Вы действительно хотите удалить?"}, new { @class = "btn btn-danger" })
+            </div>
+        <br/>
+        }
+
+        <div class="text-right col-md-6">
+            <input type="submit" class="btn btn-success" value="Сохранить" />
+            @Html.ActionLink("Отмена", "Index", "Manual", null, new { @class = "btn btn-default" })
+        </div>
+    }
+</div>
