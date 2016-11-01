@@ -1,0 +1,18 @@
+﻿@model Mettal.Models.ViewModels.HomeView
+@{
+    ViewBag.Title = "Главная";
+}
+
+<style>
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-image: none;
+    }
+</style>
+
+@Html.Partial("_Slider")
+
+@Html.Partial("_Categories", Model.Categories)

@@ -1,0 +1,21 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.CountryView
+
+@{
+    ViewBag.Title = "Страны";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <h2>Страны</h2>
+
+    @Html.Partial("_CountryCreate", new CountryViewModel())
+
+    <div id="country-list">
+        @Html.Partial("_CountryList", Model.Countries)
+    </div>
+
+
+</div>
+

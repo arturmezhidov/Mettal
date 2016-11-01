@@ -1,0 +1,21 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.GostView
+
+@{
+    ViewBag.Title = "ГОСТ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <h2>ГОСТ</h2>
+
+    @Html.Partial("_GostCreate", new GostViewModel())
+
+    <div id="gost-list">
+        @Html.Partial("_GostList", Model.Gosts)
+    </div>
+
+
+</div>
+

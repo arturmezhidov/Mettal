@@ -1,0 +1,29 @@
+﻿@model Mettal.Models.Business.AppSettings
+
+<div class="maps">
+    <div class="container">
+        <div class="text-center">
+            <h1>Схема проезда</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <h2 class="text-center">Наш офис</h2>
+                    <p class="text-center">@Model.AddressOffice</p>
+                    <div id="map-office" class="map">
+                        <iframe src="@Model.OfficeMapUrl" width="100%" height="450" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h2 class="text-center">Наш склад</h2>
+                    <p class="text-center">@Model.AddressSklad</p>
+                    <div id="map-sklad" class="map">
+                        <iframe src="@Model.SkladMapUrl" width="100%" height="450" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

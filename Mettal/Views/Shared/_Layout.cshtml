@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="http://allfont.ru/allfont.css?fonts=university-cyrillic" rel="stylesheet" type="text/css" />
+    <link href="http://allfont.ru/allfont.css?fonts=compact" rel="stylesheet" type="text/css" />
+    <link href="http://allfont.ru/allfont.css?fonts=hair-2" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img src="/Images/logo.png" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Продукция", "Categories", "Home")</li>
+                    @*<li>@Html.ActionLink("Услуги", "About", "Home")</li>*@
+                    @*<li>@Html.ActionLink("Вопрос-ответ", "About", "Home")</li>*@
+                    <li>@Html.ActionLink("Справочник", "Index", "Manual")</li>
+                    <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
+                    @if ((bool)ViewBag.IsAdmin)
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Администратор <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Таблицы", "Index", "Table")</li>
+                                <li>@Html.ActionLink("Категории", "Index", "Category")</li>
+                                <li>@Html.ActionLink("Позиции", "Index", "Product")</li>
+                                <li class="divider"></li>
+                                <li>@Html.ActionLink("Справочник", "Categories", "Manual")</li>
+                            </ul>
+                        </li>
+                    }
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+
+        @RenderBody()
+
+        <footer>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3>Контакты</h3>
+                        <ul>
+                            <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Продукция", "About", "Home")</li>
+                            @*<li>@Html.ActionLink("Услуги", "About", "Home")</li>*@
+                            @*<li>@Html.ActionLink("Вопрос-ответ", "About", "Home")</li>*@
+                            <li>@Html.ActionLink("Справочник", "About", "Home")</li>
+                            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Карта сайта</h3>
+                        <ul>
+                            <li>@Html.ActionLink("Главная", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Продукция", "About", "Home")</li>
+                            @*<li>@Html.ActionLink("Услуги", "About", "Home")</li>*@
+                            @*<li>@Html.ActionLink("Вопрос-ответ", "About", "Home")</li>*@
+                            <li>@Html.ActionLink("Справочник", "About", "Home")</li>
+                            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <p class="copyright">&copy; 2000 - @DateTime.Now.Year</p>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+</body>
+</html>

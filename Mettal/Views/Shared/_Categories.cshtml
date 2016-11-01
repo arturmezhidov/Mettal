@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Mettal.Models.ViewModels.CategoryViewModel>
+
+<div class="categories">
+    <div class="container">
+        <div class="text-center">
+            <h1>Наша продукция</h1>
+        </div>
+        <div class="row items">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <div class="item" style="background-image: url('@item.ImageViewLink')">
+                        <div class="text-wrapper text-center">
+                            @Html.ActionLink("Продукция", "Categories", "Category", new { id = item.Id }, new { @class = "" })
+                            @Html.ActionLink("Подробнее", "Details", "Category", new { id = item.Id }, new { @class = "" })
+                        </div>
+                    </div>
+                    <p class="name">@Html.ActionLink(item.DisplayName, "Products", "Category", new { id = item.Id }, new { @class = "" })</p>
+                    <div class="controls">
+                        @Html.ActionLink("Изменить", "Update", "Category", new { id = item.Id }, new { })
+                        |
+                        @Html.ActionLink("Удалить", "Delete", "Category", new { id = item.Id }, new { })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

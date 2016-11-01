@@ -1,0 +1,11 @@
+﻿@model Mettal.Models.ViewModels.HtmlEditorViewModel
+
+<div class="html-editor">
+    <script src="/ckeditor/ckeditor.js"></script>
+    <div class="html-editor-inner">
+        <textarea id="html-editor-@Model.PropertyName" name="@Model.PropertyName" class="form-control html-editor">@Model.HtmlContent</textarea>
+    </div>
+    <script>
+        CKEDITOR.replace('html-editor-@Model.PropertyName');
+    </script>
+</div>

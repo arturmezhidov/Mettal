@@ -1,0 +1,4 @@
+﻿<div class="text-center feedback-result">
+    <h2>Ваше сообщение успешно отправлено!</h2>
+    @Ajax.ActionLink("Новое сообщение", "Form", "Contacts", new AjaxOptions() { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "feedback-content" })
+</div>

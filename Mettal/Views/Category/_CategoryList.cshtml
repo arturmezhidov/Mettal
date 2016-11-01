@@ -1,0 +1,24 @@
+﻿@using Mettal.Models.ViewModels
+@model IEnumerable<CategoryViewModel>
+
+<div id="category-list">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th class="edit">Редактирование</th>
+                <th class="delete">Удаление</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CategoryViewModel item in Model)
+            {
+                <tr>
+                    <td>@item.DisplayName</td>
+                    <td>@Html.ActionLink("Изменить", "Update", new { id = item.Id })</td>
+                    <td>@Ajax.ActionLink("Удалить", "Delete", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "category-list", InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "DELETE", Confirm = "Вы действительно хотите удалить?" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+﻿@model List<Mettal.Models.ViewModels.CountryViewModel>
+
+@using (Ajax.BeginForm("Update", new AjaxOptions { UpdateTargetId = "country-list", InsertionMode = InsertionMode.Replace, HttpMethod = "PUT"}))
+{
+    @Html.AntiForgeryToken()
+
+    for (int i = 0; i < Model.Count; i++)
+    {
+        <div>
+            @Html.HiddenFor(modelItem => Model[i].Id)
+            @Html.EditorFor(modelItem => Model[i].Name, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Ajax.ActionLink("Удалить", "Delete", new { id = Model[i].Id }, new AjaxOptions { UpdateTargetId = "country-list", InsertionMode = InsertionMode.Replace, HttpMethod = "DELETE" })
+        </div>
+    }
+    
+    <input type="submit" class="btn btn-success" value="Сохранить"/>
+}

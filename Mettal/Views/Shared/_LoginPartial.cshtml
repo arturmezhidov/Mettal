@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNet.Identity
+
+<li>
+
+    @if (Request.IsAuthenticated)
+    {
+        <a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+        
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+        }
+    }
+    else
+    {
+        @Html.ActionLink("Вход", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    }
+
+</li>

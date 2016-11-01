@@ -1,0 +1,21 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.MarkView
+
+@{
+    ViewBag.Title = "Марки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <h2>Марки</h2>
+
+    @Html.Partial("_MarkCreate", new MarkViewModel())
+
+    <div id="mark-list">
+        @Html.Partial("_MarkList", Model.Marks)
+    </div>
+
+
+</div>
+

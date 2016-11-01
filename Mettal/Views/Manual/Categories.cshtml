@@ -1,0 +1,21 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.ManualView
+
+@{
+    ViewBag.Title = "Категории справочника";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="admin">
+    <div class="container">
+
+        <h2>Категории справочника</h2>
+
+        @Html.Partial("_ManualCategoryCreate", new ManualCategoryViewModel())
+
+        <div id="manual-category-list">
+            @Html.Partial("_ManualCategoryList", Model.Categories)
+        </div>
+
+    </div>
+</div>

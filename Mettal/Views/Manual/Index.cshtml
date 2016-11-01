@@ -1,0 +1,82 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.ManualView
+
+@{
+    ViewBag.Title = "Справочник";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="manual">
+    <div class="container">
+        <div class="text-center">
+            <h1>Справочник</h1>
+            
+            @if (!String.IsNullOrEmpty(Model.Settings.ManualSubheader))
+            {
+                <h3>@Model.Settings.ManualSubheader</h3>
+            }
+            
+            <br/>
+
+        </div>
+        <div>
+            @if (Model.Categories.Any())
+            {
+                <div class="panel-group" id="accordion">
+                    @foreach (ManualCategoryViewModel category in Model.Categories)
+                    {
+                        if (category.Manuals != null && (ViewBag.IsAdmin || category.Manuals.Any()))
+                        {
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@category.Id">
+                                            <span class="glyphicon glyphicon-book"> </span> @category.Name
+                                        </a>
+                                        @if (ViewBag.IsAdmin)
+                                        {
+                                            @Html.ActionLink("Добавить статью", "Create", "Manual", new { id = category.Id }, new { @class = "pull-right" })
+                                        }
+                                        else
+                                        {
+                                            <span class="badge pull-right"> @category.Manuals.Count </span>
+                                        }
+                                    </h3>
+                                </div>
+                                <div id="collapse-@category.Id" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <ul class="manual-list">
+                                            @foreach (ManualViewModel manual in category.Manuals)
+                                            {
+                                                <li>
+                                                    <h3>
+                                                        <a href="/Manual/Details/@manual.Id" class=""><span class="glyphicon glyphicon-file"></span> @manual.Name</a>
+                                                        @if (ViewBag.IsAdmin)
+                                                        {
+                                                            @Html.ActionLink("Редактировать", "Edit", new { id = manual.Id }, new { @class = "manual-edit pull-right" })
+                                                        }
+                                                    </h3>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+                        }
+                    }
+                </div>
+            }
+        </div>
+
+        @if (!String.IsNullOrEmpty(Model.Settings.ManualAbout))
+        {
+            <h3 class="manual-about">@Model.Settings.ManualAbout</h3>
+        }
+
+    </div>
+</section>
+
+
+

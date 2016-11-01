@@ -1,0 +1,21 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.TargetView
+
+@{
+    ViewBag.Title = "Назначения";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <h2>Назначения</h2>
+
+    @Html.Partial("_TargetCreate", new TargetViewModel())
+
+    <div id="target-list">
+        @Html.Partial("_TargetList", Model.Targets)
+    </div>
+
+
+</div>
+

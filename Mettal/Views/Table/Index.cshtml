@@ -1,0 +1,18 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.ProductSchemaView
+
+@{
+    ViewBag.Title = "Таблицы";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="admin">
+    <div class="container">
+
+        <h2>Таблицы <span class="btn-add-item">@Html.ActionLink("Добавить таблицу", "Update", null, new { @class = "btn btn-default" })</span> </h2>
+
+        @Html.Partial("_ProductSchemaList", Model.Schemas)
+
+    </div>
+</div>
+

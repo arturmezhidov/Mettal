@@ -1,0 +1,15 @@
+﻿@model Mettal.Models.ViewModels.ManualCategoryViewModel
+
+@using (Ajax.BeginForm("CreateCategory", new AjaxOptions { UpdateTargetId = "manual-category-list", InsertionMode = InsertionMode.Replace, OnSuccess = "$('#manual-category-create-input').val('');" })) 
+{
+    @Html.AntiForgeryToken()
+
+    <h3>Название новой категории: </h3>
+    <div class="form-inline">
+        <div class="form-group col-md-6">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "manual-category-create-input", required = "required" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-default">Добавить</button>
+    </div>
+}

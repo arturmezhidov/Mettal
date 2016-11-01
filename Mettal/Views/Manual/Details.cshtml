@@ -1,0 +1,38 @@
+﻿@model Mettal.Models.ViewModels.ManualViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    
+    <div class="container">
+        
+        <h1 class="text-center">@Model.Name</h1>
+        
+        <br />
+
+        <div>@Html.Raw(Model.HtmlContent)</div>
+        
+        <br/>
+
+        <div class="text-center">
+            
+            @Html.ActionLink("Вернуться к списку", "Index", null, new {@class = "mbtn-primary"})
+
+            @if (ViewBag.IsAdmin)
+            {
+                @Html.ActionLink("Редактировать", "Edit", new {id = Model.Id}, new {@class = "mbtn-primary"})
+            }
+
+            @if (ViewBag.IsAdmin)
+            {
+                @Html.ActionLink("Удалить", "Delete", new {id = Model.Id}, new {@class = "mbtn-primary"})
+            }
+            
+        </div>
+
+    </div>
+
+</section>

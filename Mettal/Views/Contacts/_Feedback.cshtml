@@ -1,0 +1,11 @@
+﻿@using Mettal.Models.ViewModels
+<div class="feedback">
+    <div class="container">
+        <div class="text-center">
+            <h1>Обратная связь</h1>
+        </div>
+        <div id="feedback-content" class="feedback-content">
+            @Html.Partial("_FeedbackForm", new FeedbackViewModel())
+        </div>
+    </div>
+</div>

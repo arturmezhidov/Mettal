@@ -1,0 +1,104 @@
+﻿@using Mettal.Models.ViewModels
+@model Mettal.Models.ViewModels.CategoryViewModel
+
+@{
+    ViewBag.Title = (Model == null || Model.Id == 0) ? "Добавление категории" : "Редактирование категории";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="admin">
+    <div class="container">
+        <h2>
+            @(Model == null || Model.Id == 0 ? "Добавление категории" : "Редактирование категории")
+            <span class="btn-add-item">@Html.ActionLink("Список категорий", "Index", null, new { @class = "btn btn-default" })</span>
+        </h2>
+
+        <div class="admin-form">
+            @using (Html.BeginForm("Update", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ProductSchemaId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.ProductSchemaId, Model.Items, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.ProductSchemaId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DisplayName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.DisplayName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DisplayName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(m => m.Image, new { type = "file", @class = "form-control", onchange = "readURL(this)" })
+                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(m => m.ImagePath)
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="image-preview">
+                            <img id="image-container" class="image-container" src="@(String.IsNullOrEmpty(Model.ImagePath) ? "" : VirtualPathUtility.ToAbsolute(String.Format("{0}{1}", AppConfig.CategoryImagesPath, Model.ImagePath)))" />
+                            @if (String.IsNullOrEmpty(Model.ImagePath))
+                            {
+                                <h2>Место для фото</h2>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Подробное описание</h3>
+
+                <div class="html-content">
+                    @*@Html.TextAreaFor(model => model.HtmlContent, new {@class = "form-control"})*@
+                    @Html.Partial("_HtmlEditor", new HtmlEditorViewModel { PropertyName = "HtmlContent", HtmlContent = Model.HtmlContent })
+                </div>
+
+                <div class="text-right">
+                    <input type="submit" value="Сохранить" class="btn btn-success" />
+                    @Html.ActionLink("Отмена", "Index", null, new { @class = "btn btn-default" })
+                </div>
+            }
+        </div>
+
+
+
+        <script>
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#image-container')
+                            .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                    $('.image-preview h2').remove();
+                }
+            };
+        </script>
+
+    </div>
+</div>
+

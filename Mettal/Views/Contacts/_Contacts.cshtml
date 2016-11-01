@@ -1,0 +1,71 @@
+﻿@model Mettal.Models.Business.AppSettings
+
+<div class="contacts-section">
+    <div class="container">
+        <div class="text-center">
+            <h1>Наши контакты</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+
+                    <h2 class="text-center">Контакты</h2>
+
+                    <div class="contacts-list">
+
+                        @if (!String.IsNullOrWhiteSpace(@Model.Phone1))
+                        {
+                            <p><span class="glyphicon glyphicon-earphone"></span> <span>@Model.Phone1</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Phone2))
+                        {
+                            <p><span class="glyphicon glyphicon-earphone"></span> <span>@Model.Phone2</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Phone3))
+                        {
+                            <p><span class="glyphicon glyphicon-earphone"></span> <span>@Model.Phone3</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Email1))
+                        {
+                            <p><span class="glyphicon glyphicon-envelope"></span> <span>@Model.Email1</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Email2))
+                        {
+                            <p><span class="glyphicon glyphicon-envelope"></span> <span>@Model.Email2</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Email3))
+                        {
+                            <p><span class="glyphicon glyphicon-envelope"></span> <span>@Model.Email3</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.AddressOffice))
+                        {
+                            <p><span class="glyphicon glyphicon-map-marker"></span> <span>@Model.AddressOffice</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.AddressSklad))
+                        {
+                            <p><span class="glyphicon glyphicon-map-marker"></span> <span>@Model.AddressSklad</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Worktime1))
+                        {
+                            <p><span class="glyphicon glyphicon-calendar"></span> <span>@Model.Worktime1</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Worktime2))
+                        {
+                            <p><span class="glyphicon glyphicon-calendar"></span> <span>@Model.Worktime2</span></p>
+                        }
+                        @if (!String.IsNullOrWhiteSpace(@Model.Worktime3))
+                        {
+                            <p><span class="glyphicon glyphicon-calendar"></span> <span>@Model.Worktime3</span></p>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h2 class="text-center">Банковские реквизиты:</h2>
+                    <pre>@Model.Recvisits</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

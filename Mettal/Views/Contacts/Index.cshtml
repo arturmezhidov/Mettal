@@ -1,0 +1,15 @@
+﻿@model Mettal.Models.Business.AppSettings
+@{
+    ViewBag.Title = "Contact";
+}
+
+<div class="contacts">
+
+    @Html.Partial("_Contacts", Model)
+
+    @Html.Partial("_Feedback")
+
+   @Html.Partial("_Map", Model)
+
+</div>
+
