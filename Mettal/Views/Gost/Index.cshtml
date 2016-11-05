@@ -6,16 +6,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<section>
+    <div class="container">
 
-    <h2>ГОСТ</h2>
+        <h1 class="text-center">@ViewBag.Title</h1>
 
-    @Html.Partial("_GostCreate", new GostViewModel())
+        @Html.Partial("_GostCreate", new GostViewModel())
 
-    <div id="gost-list">
-        @Html.Partial("_GostList", Model.Gosts)
+        <div id="gost-list">
+            @Html.Partial("_GostList", Model.Gosts)
+        </div>
+
     </div>
-
-
-</div>
-
+</section>
