@@ -6,16 +6,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<section>
+    <div class="container">
 
-    <h2>Назначения</h2>
+        <h1 class="text-center">@ViewBag.Title</h1>
 
-    @Html.Partial("_TargetCreate", new TargetViewModel())
+        @Html.Partial("_TargetCreate", new TargetViewModel())
 
-    <div id="target-list">
-        @Html.Partial("_TargetList", Model.Targets)
+        <div id="target-list">
+            @Html.Partial("_TargetList", Model.Targets)
+        </div>
+
     </div>
-
-
-</div>
+</section>
 
