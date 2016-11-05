@@ -6,16 +6,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<section>
+    <div class="container">
 
-    <h2>Страны</h2>
+        <h1 class="text-center">@ViewBag.Title</h1>
 
-    @Html.Partial("_CountryCreate", new CountryViewModel())
+        @Html.Partial("_CountryCreate", new CountryViewModel())
 
-    <div id="country-list">
-        @Html.Partial("_CountryList", Model.Countries)
+        <div id="country-list">
+            @Html.Partial("_CountryList", Model.Countries)
+        </div>
+
     </div>
-
-
-</div>
-
+</section>
