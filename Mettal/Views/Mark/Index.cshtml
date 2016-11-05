@@ -6,16 +6,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<section>
+    <div class="container">
 
-    <h2>Марки</h2>
+        <h1 class="text-center">@ViewBag.Title</h1>
 
-    @Html.Partial("_MarkCreate", new MarkViewModel())
+        @Html.Partial("_MarkCreate", new MarkViewModel())
 
-    <div id="mark-list">
-        @Html.Partial("_MarkList", Model.Marks)
+        <div id="mark-list">
+            @Html.Partial("_MarkList", Model.Marks)
+        </div>
+
     </div>
-
-
-</div>
-
+</section>
