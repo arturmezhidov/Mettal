@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -207,6 +208,10 @@
     <Compile Include="Migrations\201610221156556_manual.cs" />
     <Compile Include="Migrations\201610221156556_manual.Designer.cs">
       <DependentUpon>201610221156556_manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611051406125_Slider.cs" />
+    <Compile Include="Migrations\201611051406125_Slider.Designer.cs">
+      <DependentUpon>201611051406125_Slider.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -680,6 +685,10 @@
     <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="ckeditor\skins\moono\readme.md" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -803,6 +812,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610221156556_manual.resx">
       <DependentUpon>201610221156556_manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611051406125_Slider.resx">
+      <DependentUpon>201611051406125_Slider.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
