@@ -30,14 +30,14 @@ namespace Mettal.Controllers
                 : GetViewModel<Category, CategoryViewModel>(id);
 
             vm.Items = DataContext
-                .GetRepository<ProductSchema>()
+                .GetRepository<Table>()
                 .GetAll()
                 .Where(i => !i.IsDeleted)
                 .Select(i => new SelectListItem
                 {
                     Text = i.TableName,
                     Value = i.Id.ToString(),
-                    Selected = (i.Id == vm.ProductSchemaId)
+                    Selected = (i.Id == vm.TableId)
                 })
                 .ToList();
 
@@ -54,14 +54,14 @@ namespace Mettal.Controllers
             }
 
             vm.Items = DataContext
-                .GetRepository<ProductSchema>()
+                .GetRepository<Table>()
                 .GetAll()
                 .Where(i => !i.IsDeleted)
                 .Select(i => new SelectListItem
                 {
                     Text = i.TableName,
                     Value = i.Id.ToString(),
-                    Selected = (i.Id == vm.ProductSchemaId)
+                    Selected = (i.Id == vm.TableId)
                 })
                 .ToList();
 

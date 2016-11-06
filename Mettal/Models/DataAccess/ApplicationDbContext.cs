@@ -7,7 +7,7 @@ namespace Mettal.Models.DataAccess
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<ProductSchema> ProductSchemas { get; set; }
+        public virtual DbSet<Table> Tables { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Gost> Gosts { get; set; }
         public virtual DbSet<Mark> Marks { get; set; }

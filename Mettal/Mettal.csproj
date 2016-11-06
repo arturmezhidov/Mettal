@@ -177,51 +177,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201609251708183_InitialCreate.cs" />
-    <Compile Include="Migrations\201609251708183_InitialCreate.Designer.cs">
-      <DependentUpon>201609251708183_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609282123179_addTablenamesettings.cs" />
-    <Compile Include="Migrations\201609282123179_addTablenamesettings.Designer.cs">
-      <DependentUpon>201609282123179_addTablenamesettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609282127445_rename-product-settings-on-schema.cs" />
-    <Compile Include="Migrations\201609282127445_rename-product-settings-on-schema.Designer.cs">
-      <DependentUpon>201609282127445_rename-product-settings-on-schema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610011316389_add-order-number-to-product-schema.cs" />
-    <Compile Include="Migrations\201610011316389_add-order-number-to-product-schema.Designer.cs">
-      <DependentUpon>201610011316389_add-order-number-to-product-schema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610011415101_change-column-type-is___-in-product-schema.cs" />
-    <Compile Include="Migrations\201610011415101_change-column-type-is___-in-product-schema.Designer.cs">
-      <DependentUpon>201610011415101_change-column-type-is___-in-product-schema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610062115545_asd.cs" />
-    <Compile Include="Migrations\201610062115545_asd.Designer.cs">
-      <DependentUpon>201610062115545_asd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610072244177_add-id.cs" />
-    <Compile Include="Migrations\201610072244177_add-id.Designer.cs">
-      <DependentUpon>201610072244177_add-id.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610221156556_manual.cs" />
-    <Compile Include="Migrations\201610221156556_manual.Designer.cs">
-      <DependentUpon>201610221156556_manual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611051406125_Slider.cs" />
-    <Compile Include="Migrations\201611051406125_Slider.Designer.cs">
-      <DependentUpon>201611051406125_Slider.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611052137589_slide-order.cs" />
-    <Compile Include="Migrations\201611052137589_slide-order.Designer.cs">
-      <DependentUpon>201611052137589_slide-order.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611052310416_slide-ishidden.cs" />
-    <Compile Include="Migrations\201611052310416_slide-ishidden.Designer.cs">
-      <DependentUpon>201611052310416_slide-ishidden.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business\AppSettings.cs" />
     <Compile Include="Models\DataAccess\ApplicationDbContext.cs" />
@@ -238,7 +193,7 @@
     <Compile Include="Models\ViewModels\ManualView.cs" />
     <Compile Include="Models\Entities\Mark.cs" />
     <Compile Include="Models\Entities\Product.cs" />
-    <Compile Include="Models\Entities\ProductSchema.cs" />
+    <Compile Include="Models\Entities\Table.cs" />
     <Compile Include="Models\Entities\Setting.cs" />
     <Compile Include="Models\Entities\Target.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -250,8 +205,8 @@
     <Compile Include="Models\ViewModels\HtmlEditorViewModel.cs" />
     <Compile Include="Models\ViewModels\ManualCategoryViewModel.cs" />
     <Compile Include="Models\ViewModels\ManualViewModel.cs" />
-    <Compile Include="Models\ViewModels\ProductSchemaView.cs" />
-    <Compile Include="Models\ViewModels\ProductSchemaViewModel.cs" />
+    <Compile Include="Models\ViewModels\TableView.cs" />
+    <Compile Include="Models\ViewModels\TableViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductsView.cs" />
     <Compile Include="Models\ViewModels\SlideViewModel.cs" />
     <Compile Include="Models\ViewModels\TargetView.cs" />
@@ -759,7 +714,7 @@
     <Content Include="Views\Target\_TargetList.cshtml" />
     <Content Include="Views\Target\Index.cshtml" />
     <Content Include="Views\Table\Index.cshtml" />
-    <Content Include="Views\Table\_ProductSchemaList.cshtml" />
+    <Content Include="Views\Table\_TableList.cshtml" />
     <Content Include="Views\Table\Update.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\_CategoryList.cshtml" />
@@ -798,41 +753,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609251708183_InitialCreate.resx">
-      <DependentUpon>201609251708183_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609282123179_addTablenamesettings.resx">
-      <DependentUpon>201609282123179_addTablenamesettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609282127445_rename-product-settings-on-schema.resx">
-      <DependentUpon>201609282127445_rename-product-settings-on-schema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610011316389_add-order-number-to-product-schema.resx">
-      <DependentUpon>201610011316389_add-order-number-to-product-schema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610011415101_change-column-type-is___-in-product-schema.resx">
-      <DependentUpon>201610011415101_change-column-type-is___-in-product-schema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610062115545_asd.resx">
-      <DependentUpon>201610062115545_asd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610072244177_add-id.resx">
-      <DependentUpon>201610072244177_add-id.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610221156556_manual.resx">
-      <DependentUpon>201610221156556_manual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611051406125_Slider.resx">
-      <DependentUpon>201611051406125_Slider.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611052137589_slide-order.resx">
-      <DependentUpon>201611052137589_slide-order.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611052310416_slide-ishidden.resx">
-      <DependentUpon>201611052310416_slide-ishidden.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

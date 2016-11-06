@@ -28,7 +28,7 @@ namespace Mettal.Models.ViewModels
 
         [DisplayName("Таблица")]
         [Required(ErrorMessage = "Выберите таблицу")]
-        public int? ProductSchemaId { get; set; }
+        public int? TableId { get; set; }
 
         public string ImageViewLink { get; set; }
 

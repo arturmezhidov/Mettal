@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
@@ -14,9 +12,9 @@ namespace Mettal.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var vm = new ProductSchemaView
+            var vm = new TableView
             {
-                Schemas = GetViewModelCollection<ProductSchema, ProductSchemaViewModel>().ToList()
+                Tables = GetViewModelCollection<Table, TableViewModel>().ToList()
             };
 
             return View(vm);
@@ -27,16 +25,16 @@ namespace Mettal.Controllers
         {
             if (id == null)
             {
-                return View("Update", GetNewSchema());
+                return View("Update", GetNewTable());
             }
 
-            var vm = GetViewModel<ProductSchema, ProductSchemaViewModel>(id);
+            var vm = GetViewModel<Table, TableViewModel>(id);
 
             return View("Update", vm);
         }
 
         [HttpPost]
-        public ActionResult Update(ProductSchemaViewModel vm)
+        public ActionResult Update(TableViewModel vm)
         {
             if (!ModelState.IsValid)
             {
@@ -45,11 +43,11 @@ namespace Mettal.Controllers
 
             if (vm.Id > 0)
             {
-                UpdateModel<ProductSchema, ProductSchemaViewModel>(vm, vm.Id);
+                UpdateModel<Table, TableViewModel>(vm, vm.Id);
             }
             else
             {
-                CreateModel<ProductSchema, ProductSchemaViewModel>(vm);
+                CreateModel<Table, TableViewModel>(vm);
             }
 
             return RedirectToAction("Index");
@@ -58,16 +56,14 @@ namespace Mettal.Controllers
         [HttpDelete]
         public ActionResult Delete(int id)
         {
-            DeleteModel<ProductSchema>(id);
+            DeleteModel<Table>(id);
 
-            var items = GetViewModelCollection<ProductSchema, ProductSchemaViewModel>().ToList();
-
-            return PartialView("_ProductSchemaList", items);
+            return new EmptyResult();
         }
 
-        protected ProductSchemaViewModel GetNewSchema()
+        protected TableViewModel GetNewTable()
         {
-            var vm = new ProductSchemaViewModel();
+            var vm = new TableViewModel();
             var properties = vm
                 .GetType()
                 .GetProperties()

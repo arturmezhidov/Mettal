@@ -1,5 +1,5 @@
 ﻿@using Mettal.Models.ViewModels
-@model Mettal.Models.ViewModels.ProductSchemaView
+@model Mettal.Models.ViewModels.TableView
 
 @{
     ViewBag.Title = "Таблицы";
@@ -9,9 +9,9 @@
 <div class="admin">
     <div class="container">
 
-        <h2>Таблицы <span class="btn-add-item">@Html.ActionLink("Добавить таблицу", "Update", null, new { @class = "btn btn-default" })</span> </h2>
+        <h2>@ViewBag.Title <span class="btn-add-item">@Html.ActionLink("Добавить таблицу", "Update", null, new { @class = "btn btn-default" })</span> </h2>
 
-        @Html.Partial("_ProductSchemaList", Model.Schemas)
+        @Html.Partial("_TableList", Model.Tables)
 
     </div>
 </div>

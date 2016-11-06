@@ -1,0 +1,25 @@
+﻿@using Mettal.Models.ViewModels
+@model IEnumerable<TableViewModel>
+
+<div id="product-table-list">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Название</th>
+                <th style="width: 220px;">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (TableViewModel table in Model)
+            {
+                <tr id="tr-@table.Id">
+                    <td>@table.TableName</td>
+                    <td>
+                        @Html.ActionLink("Изменить", "Update", new { id = table.Id }, new { @class = "btn btn-default" })
+                        @Ajax.ActionLink("Удалить", "Delete", new { id = table.Id }, new AjaxOptions { UpdateTargetId = "tr-" + table.Id, InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "DELETE", Confirm = "Вы действительно хотите удалить?" }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
