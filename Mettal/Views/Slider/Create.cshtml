@@ -1,0 +1,48 @@
+﻿@model Mettal.Models.ViewModels.SlideViewModel
+@{
+    ViewBag.Title = "Добавление слайда";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        <h2 class="text-center">@ViewBag.Title</h2>
+        @using (Html.BeginForm("Create", "Slider", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <h3>Фото</h3>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="@Model.ImageUrl" id="image-container" class="upload-image" />
+                    @Html.TextBoxFor(m => m.Image, new { type = "file", @class = "form-control", onchange = "readURL(this)", id = "file-input" })
+                </div>
+            </div>
+
+            <h3>Текст</h3>
+            <div class="row">
+                <div class="col-md-5">
+                    @Html.TextAreaFor(model => model.Title, new { @class = "form-control", id = "title-input" })
+                    <br />
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-success">Добавить</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#image-container')
+                    .attr('src', e.target.result);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    };
+</script>
+

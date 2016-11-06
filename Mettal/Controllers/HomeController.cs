@@ -15,7 +15,8 @@ namespace Mettal.Controllers
             HomeView vm = new HomeView
             {
                 Settings = Settings,
-                Categories = GetViewModelCollection<Category, CategoryViewModel>().Select(ToView)
+                Categories = GetViewModelCollection<Category, CategoryViewModel>().Select(ToViewCategory),
+                Slides = GetViewModelCollection<Slide, SlideViewModel>().Where(i => !i.IsHidden).Select(ToViewSlide)
             };
 
             return View(vm);
@@ -26,7 +27,7 @@ namespace Mettal.Controllers
             HomeView vm = new HomeView
             {
                 Settings = Settings,
-                Categories = GetViewModelCollection<Category, CategoryViewModel>().Select(ToView)
+                Categories = GetViewModelCollection<Category, CategoryViewModel>().Select(ToViewCategory)
             };
 
             return View(vm);
@@ -42,9 +43,14 @@ namespace Mettal.Controllers
 
 
 
-        private CategoryViewModel ToView(CategoryViewModel vm)
+        private CategoryViewModel ToViewCategory(CategoryViewModel vm)
         {
             vm.ImageViewLink = GetFileLink(AppConfig.CategoryImagesPath, vm.ImagePath);
+            return vm;
+        }
+        private SlideViewModel ToViewSlide(SlideViewModel vm)
+        {
+            vm.ImageUrl = GetFileLink(AppConfig.SlideImagesPath, vm.ImageUrl);
             return vm;
         }
     }

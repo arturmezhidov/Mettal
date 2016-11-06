@@ -80,7 +80,7 @@ namespace Mettal.Controllers
 
                 if (vm.Image != null)
                 {
-                    vm.ImagePath = SaveFile(vm.Image);
+                    vm.ImagePath = SaveFile(vm.Image, AppConfig.CategoryImagesPath);
                 }
 
                 UpdateModel<Category, CategoryViewModel>(vm, vm.Id);
@@ -93,7 +93,7 @@ namespace Mettal.Controllers
                     return View("Update", vm);
                 }
 
-                vm.ImagePath = SaveFile(vm.Image);
+                vm.ImagePath = SaveFile(vm.Image, AppConfig.CategoryImagesPath);
 
                 CreateModel<Category, CategoryViewModel>(vm);
             }

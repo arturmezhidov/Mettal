@@ -8,7 +8,6 @@ using System.Web.Mvc;
 using Mettal.Models.Business;
 using Mettal.Models.DataAccess;
 using Mettal.Models.Entities;
-using Mettal.Models.ViewModels;
 using Mettal.Util;
 
 namespace Mettal.Controllers
@@ -175,10 +174,10 @@ namespace Mettal.Controllers
             return vm;
         }
 
-        protected string SaveFile(HttpPostedFileBase file)
+        protected string SaveFile(HttpPostedFileBase file, string fileDirectoryPath)
         {
             string fileName = String.Format("{0}{1}", Guid.NewGuid(), Path.GetExtension(file.FileName));
-            string filePath = String.Format("{0}{1}", AppConfig.CategoryImagesPath, fileName);
+            string filePath = String.Format("{0}{1}", fileDirectoryPath, fileName);
 
             file.SaveAs(Server.MapPath(filePath));
 

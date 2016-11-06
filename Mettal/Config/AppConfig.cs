@@ -6,5 +6,6 @@ namespace Mettal
     {
         public static string ConnectionStringName { get { return WebConfigurationManager.AppSettings["ConnectionStringName"] ?? "DefaultConnection"; } }
         public static string CategoryImagesPath { get { return "~/Images/Category/"; } }
+        public static string SlideImagesPath { get { return "~/Images/Slide/"; } }
     }
 }

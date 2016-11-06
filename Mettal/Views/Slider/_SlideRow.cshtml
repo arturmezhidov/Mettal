@@ -1,0 +1,27 @@
+﻿@model Mettal.Models.ViewModels.SlideViewModel
+
+<tr id="tr-@Model.Id">
+    <td class="col-img">
+        <img src="@Model.ImageUrl" />
+    </td>
+    <td>
+        @Model.Title
+    </td>
+    <td>
+        @if (!Model.IsFirst)
+        {
+            @Ajax.ActionLink("Вверх", "Up", new { id = Model.Id }, new AjaxOptions { UpdateTargetId = "slide-list", InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "PUT" }, new { @class = "btn btn-default" })
+        }
+        @if (!Model.IsLast)
+        {
+            @Ajax.ActionLink("Вниз", "Down", new { id = Model.Id }, new AjaxOptions { UpdateTargetId = "slide-list", InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "PUT" }, new { @class = "btn btn-default" })
+        }
+    </td>
+    <td>
+        @Html.ActionLink("Редактировать", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        @Ajax.ActionLink(Model.IsHidden ? "Отображать" : "Скрывать", "Hide", new { id = Model.Id }, new AjaxOptions { UpdateTargetId = "tr-" + Model.Id, InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "PUT" }, new { @class = "btn btn-default" })
+        @Ajax.ActionLink("Удалить", "Delete", new { id = Model.Id }, new AjaxOptions { UpdateTargetId = "tr-" + Model.Id, InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "DELETE", Confirm = "Вы действительно хотите удалить?" }, new { @class = "btn btn-danger" })
+    </td>
+</tr>
+
+

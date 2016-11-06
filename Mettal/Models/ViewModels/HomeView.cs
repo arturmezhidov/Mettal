@@ -11,5 +11,6 @@ namespace Mettal.Models.ViewModels
     {
         public AppSettings Settings { get; set; }
         public IEnumerable<CategoryViewModel> Categories { get; set; }
+        public IEnumerable<SlideViewModel> Slides { get; set; }
     }
 }

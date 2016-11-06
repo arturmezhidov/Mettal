@@ -1,9 +1,17 @@
-﻿@model IEnumerable<Mettal.Models.ViewModels.SlideViewModel>
+﻿@using Mettal.Models.ViewModels
+@model List<SlideViewModel>
 
 @{
     ViewBag.Title = "Слайды";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<section>
+    <div class="container">
+        <h2 class="text-center">@ViewBag.Title</h2>
+        @Html.ActionLink("Добавить слайд", "Create", null, new { @class = "btn btn-default pull-right" })
+        <br />
+        @Html.Partial("_SlideList", Model)
+    </div>
+</section>
 
