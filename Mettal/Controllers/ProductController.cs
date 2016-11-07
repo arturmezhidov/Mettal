@@ -24,14 +24,31 @@ namespace Mettal.Controllers
         [HttpGet]
         public ActionResult Create(int id)
         {
-            CategoryViewModel category = GetViewModel<Category, CategoryViewModel>(id);
-
-            if (category == null)
+            if (!UpdateCategory(id))
             {
                 Redirect("/Category");
             }
+        
+            return View();
+        }
 
-            return View(category);
+
+
+
+        protected virtual bool UpdateCategory(int id)
+        {
+            Category category = DataContext.GetRepository<Category>().GetById(id);
+
+            if (category == null || category.Table == null)
+            {
+                return false;
+            }
+
+            TempData.Add("CategoryId", category.Id);
+            TempData.Add("CategoryName", category.DisplayName);
+            TempData.Add("CategoryName", category.Table);
+
+            return true;
         }
     }
 }
