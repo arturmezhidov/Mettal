@@ -6,6 +6,7 @@ using Mettal.Models.ViewModels;
 
 namespace Mettal.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class CountryController : BaseController
     {
         [HttpGet]

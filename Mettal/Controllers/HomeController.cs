@@ -22,17 +22,6 @@ namespace Mettal.Controllers
             return View(vm);
         }
 
-        public ActionResult Categories()
-        {
-            HomeView vm = new HomeView
-            {
-                Settings = Settings,
-                Categories = GetViewModelCollection<Category, CategoryViewModel>().Select(ToViewCategory)
-            };
-
-            return View(vm);
-        }
-
  
         public ActionResult About()
         {

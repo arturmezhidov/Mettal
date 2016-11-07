@@ -6,6 +6,8 @@
         <textarea id="html-editor-@Model.PropertyName" name="@Model.PropertyName" class="form-control html-editor">@Model.HtmlContent</textarea>
     </div>
     <script>
-        CKEDITOR.replace('html-editor-@Model.PropertyName');
+        CKEDITOR.replace('html-editor-@Model.PropertyName', {
+            height: '400px'
+        });
     </script>
 </div>

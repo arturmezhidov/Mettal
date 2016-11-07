@@ -741,12 +741,13 @@
     <Content Include="Views\Slider\Create.cshtml" />
     <Content Include="Views\Slider\_SlideRow.cshtml" />
     <Content Include="Views\Slider\Edit.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Product\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Product\" />
     <Folder Include="Models\Services\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

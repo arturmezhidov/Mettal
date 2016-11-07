@@ -1,0 +1,14 @@
+﻿@model Mettal.Models.ViewModels.CategoryView
+
+@{
+    ViewBag.Title = "Редактирование категорий";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div class="container">
+        <h2>@ViewBag.Title <span class="btn-add-item">@Html.ActionLink("Добавить категорию", "Update", null, new { @class = "btn btn-default" })</span> </h2>
+        @Html.Partial("_CategoryList", Model.Categories)
+    </div>
+</section>
+

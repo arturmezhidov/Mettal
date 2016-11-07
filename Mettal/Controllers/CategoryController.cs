@@ -1,18 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Mettal.Models.Entities;
 using Mettal.Models.ViewModels;
 
 namespace Mettal.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class CategoryController : BaseController
     {
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult Index()
+        {
+            var vm = new CategoryView
+            {
+                Categories = GetViewModelCollection<Category, CategoryViewModel>().Select(ToViewCategory).ToList()
+            };
+
+            return View(vm);
+        }
+
+        [HttpGet]
+        public ActionResult Edit()
         {
             var vm = new CategoryView
             {
@@ -98,7 +108,7 @@ namespace Mettal.Controllers
                 CreateModel<Category, CategoryViewModel>(vm);
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit");
         }
 
         [HttpDelete]
@@ -106,16 +116,10 @@ namespace Mettal.Controllers
         {
             DeleteModel<Category>(id);
 
-            var items = GetViewModelCollection<Category, CategoryViewModel>().ToList();
-
-            return PartialView("_CategoryList", items);
+            return new EmptyResult();
         }
 
-        public ActionResult Products(int id)
-        {
-            return RedirectToAction("Index");
-        }
-
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
             var vm = GetViewModel<Category, CategoryViewModel>(id);
@@ -126,6 +130,12 @@ namespace Mettal.Controllers
             }
 
             return View(vm);
+        }
+
+        private CategoryViewModel ToViewCategory(CategoryViewModel vm)
+        {
+            vm.ImageViewLink = GetFileLink(AppConfig.CategoryImagesPath, vm.ImagePath);
+            return vm;
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Mettal.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class SliderController : BaseController
     {
         public ActionResult Index()

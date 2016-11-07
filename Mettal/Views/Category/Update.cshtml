@@ -9,7 +9,7 @@
 <div class="admin">
     <div class="container">
         <h2>
-            @(Model == null || Model.Id == 0 ? "Добавление категории" : "Редактирование категории")
+            @ViewBag.Title
             <span class="btn-add-item">@Html.ActionLink("Список категорий", "Index", null, new { @class = "btn btn-default" })</span>
         </h2>
 

@@ -1,6 +1,6 @@
 ﻿@model Mettal.Models.ViewModels.CategoryViewModel
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Описание";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -11,7 +11,11 @@
             @Html.Raw(Model.HtmlContent)
         </div>
         <div class="text-center controls">
-            @Html.ActionLink("Все продукции", "Index", "Home", null, new { @class="btn btn-default"})
+            @Html.ActionLink("Все продукции", "Index", "Category", null, new { @class="mbtn-primary"})
+            @if (ViewBag.IsAdmin)
+            {
+                @Html.ActionLink("Редактировать", "Update", "Category", new { id = Model.Id }, new { @class = "mbtn-primary" })
+            }
         </div>
     </div>
 </div>

@@ -28,7 +28,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Продукция", "Categories", "Home")</li>
+                    <li>@Html.ActionLink("Продукция", "Index", "Category")</li>
                     @*<li>@Html.ActionLink("Услуги", "About", "Home")</li>*@
                     @*<li>@Html.ActionLink("Вопрос-ответ", "About", "Home")</li>*@
                     <li>@Html.ActionLink("Справочник", "Index", "Manual")</li>
@@ -39,7 +39,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Администратор <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Таблицы", "Index", "Table")</li>
-                                <li>@Html.ActionLink("Категории", "Index", "Category")</li>
+                                <li>@Html.ActionLink("Категории", "Edit", "Category")</li>
                                 <li>@Html.ActionLink("Позиции", "Index", "Product")</li>
                                 <li class="divider"></li>
                                 <li>@Html.ActionLink("Госты", "Index", "Gost")</li>
