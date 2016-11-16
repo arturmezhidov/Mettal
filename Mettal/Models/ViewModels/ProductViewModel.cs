@@ -6,8 +6,7 @@ namespace Mettal.Models.ViewModels
 {
     public class ProductViewModel : BaseViewModel
     {
-        public Table Table { get; set; }
-        public CategoryViewModel Category { get; set; }
+        public Category Category { get; set; }
 
         // common
         public string Name { get; set; }

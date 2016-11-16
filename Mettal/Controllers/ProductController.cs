@@ -24,31 +24,24 @@ namespace Mettal.Controllers
         [HttpGet]
         public ActionResult Create(int id)
         {
-            if (!UpdateCategory(id))
+            var vm = new ProductViewModel
+            {
+                Category = GetCategory(id)
+            };
+
+            if (vm.Category?.Table == null)
             {
                 Redirect("/Category");
             }
         
-            return View();
+            return View(vm);
         }
 
 
-
-
-        protected virtual bool UpdateCategory(int id)
+        protected Category GetCategory(int id)
         {
             Category category = DataContext.GetRepository<Category>().GetById(id);
-
-            if (category == null || category.Table == null)
-            {
-                return false;
-            }
-
-            TempData.Add("CategoryId", category.Id);
-            TempData.Add("CategoryName", category.DisplayName);
-            TempData.Add("CategoryName", category.Table);
-
-            return true;
+            return category;
         }
     }
 }
