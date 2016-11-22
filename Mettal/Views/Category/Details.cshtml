@@ -11,7 +11,7 @@
             @Html.Raw(Model.HtmlContent)
         </div>
         <div class="text-center controls">
-            @Html.ActionLink("Все продукции", "Index", "Category", null, new { @class="mbtn-primary"})
+            @Html.ActionLink("Позиции", "Positions", "Product", new { id = Model.Id }, new { @class="mbtn-primary"})
             @if (ViewBag.IsAdmin)
             {
                 @Html.ActionLink("Редактировать", "Update", "Category", new { id = Model.Id }, new { @class = "mbtn-primary" })

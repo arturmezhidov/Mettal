@@ -1,15 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Mettal.Models.Entities;
-
-namespace Mettal.Models.ViewModels
+﻿namespace Mettal.Models.Business
 {
-    public class ProductViewModel : BaseViewModel
+    public class ProductModel
     {
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
-
         // common
+        public int Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public string Surface { get; set; }
@@ -30,17 +24,10 @@ namespace Mettal.Models.ViewModels
         public double WeightOneKg { get; set; }
 
         // navigate
-        public int MarkId { get; set; }
-        public List<Mark> Marks { get; set; }
-
-        public int GostId { get; set; }
-        public List<Gost> Gosts { get; set; }
-
-        public int TargetId { get; set; }
-        public List<Target> Targets { get; set; }
-
-        public int CountryId { get; set; }
-        public List<Country> Countries { get; set; }
+        public string Mark { get; set; }
+        public string Gost { get; set; }
+        public string Target { get; set; }
+        public string Country { get; set; }
 
         // dop
         public string Info1 { get; set; }

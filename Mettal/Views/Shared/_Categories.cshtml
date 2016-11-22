@@ -11,7 +11,7 @@
                 <div class="col-md-4" id="item-@item.Id">
                     <div class="item" style="background-image: url('@item.ImageViewLink')">
                         <div class="text-wrapper text-center">
-                            @Html.ActionLink("Продукция", "Positions", "Product", new { id = item.Id }, new { @class = "" })
+                            @Html.ActionLink("Позиции", "Positions", "Product", new { id = item.Id }, new { @class = "" })
                             @Html.ActionLink("Подробнее", "Details", "Category", new { id = item.Id }, new { @class = "" })
                         </div>
                     </div>
@@ -20,6 +20,8 @@
                         @Html.ActionLink("Изменить", "Update", "Category", new { id = item.Id }, new { })
                         |
                         @Ajax.ActionLink("Удалить", "Delete", "Category", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "item-" + item.Id, InsertionMode = InsertionMode.ReplaceWith, HttpMethod = "DELETE", Confirm = "Вы действительно хотите удалить?" })
+                        |
+                        @Html.ActionLink("Новая позиция", "Create", "Product", new { id = item.Id }, new { })
                     </div>
                 </div>
             }

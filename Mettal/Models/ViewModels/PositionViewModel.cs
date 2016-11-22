@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Mettal.Models.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
 namespace Mettal.Models.ViewModels
 {
-    public class ProductViewModel : BaseViewModel
+    public class PositionViewModel : BaseViewModel
     {
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
-
         // common
         public string Name { get; set; }
         public double Price { get; set; }
@@ -30,17 +28,10 @@ namespace Mettal.Models.ViewModels
         public double WeightOneKg { get; set; }
 
         // navigate
-        public int MarkId { get; set; }
-        public List<Mark> Marks { get; set; }
-
-        public int GostId { get; set; }
-        public List<Gost> Gosts { get; set; }
-
-        public int TargetId { get; set; }
-        public List<Target> Targets { get; set; }
-
-        public int CountryId { get; set; }
-        public List<Country> Countries { get; set; }
+        public string Mark { get; set; }
+        public string Gost { get; set; }
+        public string Target { get; set; }
+        public string Country { get; set; }
 
         // dop
         public string Info1 { get; set; }
