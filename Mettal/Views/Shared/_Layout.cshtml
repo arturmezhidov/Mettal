@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Mettal.Models.Business
+@using Mettal.Models.ViewModels
+@{
+    AppSettings settings = (AppSettings) ViewBag.Settings;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -40,7 +46,6 @@
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Таблицы", "Index", "Table")</li>
                                 <li>@Html.ActionLink("Категории", "Edit", "Category")</li>
-                                <li>@Html.ActionLink("Позиции", "Index", "Product")</li>
                                 <li class="divider"></li>
                                 <li>@Html.ActionLink("Госты", "Index", "Gost")</li>
                                 <li>@Html.ActionLink("Марки", "Index", "Mark")</li>
@@ -68,26 +73,56 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <h3>Контакты</h3>
-                        <ul>
-                            <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Продукция", "About", "Home")</li>
-                            @*<li>@Html.ActionLink("Услуги", "About", "Home")</li>*@
-                            @*<li>@Html.ActionLink("Вопрос-ответ", "About", "Home")</li>*@
-                            <li>@Html.ActionLink("Справочник", "About", "Home")</li>
-                            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
                         <h3>Карта сайта</h3>
                         <ul>
                             <li>@Html.ActionLink("Главная", "Index", "Home")</li>
-                            <li>@Html.ActionLink("Продукция", "About", "Home")</li>
+                            <li>@Html.ActionLink("Продукция", "Index", "Category")</li>
                             @*<li>@Html.ActionLink("Услуги", "About", "Home")</li>*@
                             @*<li>@Html.ActionLink("Вопрос-ответ", "About", "Home")</li>*@
-                            <li>@Html.ActionLink("Справочник", "About", "Home")</li>
-                            <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Справочник", "Index", "Manual")</li>
+                            <li>@Html.ActionLink("Контакты", "Index", "Contacts")</li>
                         </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Контакты</h3>
+                        <ul>
+                            @if (!string.IsNullOrEmpty(settings.Phone1))
+                            {
+                                <li><a>@settings.Phone1</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.Phone2))
+                            {
+                                <li><a>@settings.Phone2</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.Phone3))
+                            {
+                                <li><a>@settings.Phone3</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.Email1))
+                            {
+                                <li><a>@settings.Email1</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.Email2))
+                            {
+                                <li><a>@settings.Email2</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.Email3))
+                            {
+                                <li><a>@settings.Email3</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.AddressOffice))
+                            {
+                                <li><a>Офис: @settings.AddressOffice</a></li>
+                            }
+                            @if (!string.IsNullOrEmpty(settings.AddressSklad))
+                            {
+                                <li><a>Склад: @settings.AddressSklad</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Заказать звонок</h3>
+                        @Html.Partial("~/Views/Callback/_CallForm.cshtml", new CallbackViewModel())
                     </div>
                 </div>
                 <div class="text-center">

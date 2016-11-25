@@ -26,10 +26,7 @@ namespace Mettal.Controllers
                 {
                     Phone1 = "+375 (29) 153 67 12",
                     Phone2 = "+375 (29) 153 67 12",
-                    Phone3 = "+375 (29) 153 67 12",
                     Email1 = "test-mail@gmail.com",
-                    Email2 = "test-mail@gmail.com",
-                    Email3 = "test-mail@gmail.com",
                     AddressOffice = "ул. Ольшевского 19, Минск",
                     OfficeMapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.154278938668!2d27.497291104207036!3d53.914597958269944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbc543f51558f1%3A0x776838c60ee3d4b9!2z0YPQuy4g0J7Qu9GM0YjQtdCy0YHQutC-0LPQviAxOSwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1476307788400",
                     AddressSklad = "ул. Карла Либкнехта 80/3, Минск",

@@ -1,0 +1,18 @@
+﻿@model Mettal.Models.ViewModels.CallbackViewModel
+
+<div class="call-container" id="call-container">
+    <div class="call-form">
+        @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "call-container", HttpMethod = "POST", InsertionMode = InsertionMode.ReplaceWith, Url = "/Callback/Call" }))
+        {
+            <div>
+                @Html.ValidationMessageFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name, new {placeholder = "Имя", type = "text"})
+            </div>
+            <div>
+                @Html.ValidationMessageFor(model => model.Phone)
+                @Html.TextBoxFor(model => model.Phone, new {placeholder = "Телефон", type = "text"})
+            </div>
+            <input type="submit" value="Заказать"  />
+        }
+    </div>
+</div>

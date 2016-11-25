@@ -16,6 +16,7 @@ namespace Mettal.Controllers
             var vm = new PositionsView
             {
                 Category = category.DisplayName,
+                CategoryId = id,
                 Positions = PositionHelper.GetPositionMembers(category.Products, category.Table).OrderBy(i => i.OrderNumber).ToList()
             };
 

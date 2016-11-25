@@ -133,11 +133,13 @@ pre {
 table.table-image {
     th.col-img, td.col-img {
         width: 150px;
+
         img {
             width: 120px;
             height: 70px;
         }
     }
+
     textarea {
         height: 120%;
     }
@@ -155,12 +157,11 @@ table.table-image {
     background-color: rgba(0, 0, 0, 0.5);
 
     .navbar-brand img {
-        margin-top: 9px;
-        margin-bottom: -3px;
+        width: 150px;
     }
 
     .navbar-nav {
-        margin: 28px 0 0 50px;
+        margin: 23px 0 0 0px;
     }
 
     .nav .open > a,
@@ -296,14 +297,18 @@ table.table-image {
         .controls {
             font-weight: bold;
             margin-top: 0;
-            color: #AAA;
 
             a {
-                color: #AAA;
+                color: #888;
                 margin-right: 10px;
+                margin-left: 10px;
+
+                &:first-child {
+                    margin-left: 0px;
+                }
 
                 &:last-child {
-                    margin-left: 10px;
+                    margin-right: 0px;
                 }
             }
         }
@@ -478,6 +483,10 @@ footer {
         font-family: 'Hair-2', arial;
         letter-spacing: 2px;
     }
+
+    .center.col-md-4 {
+        padding-left: 0 !important;
+    }
 }
 
 .category-details {
@@ -612,5 +621,85 @@ footer {
 
     .html-content {
         margin-bottom: 20px;
+    }
+}
+
+.call-container {
+    .call-form {
+        input[type='text'] {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font: 400 18px "Raleway", sans-serif;
+            padding: 4px 12px;
+            background: none;
+            border: 2px solid #eee;
+            width: 100%;
+            border-radius: 0;
+            outline: none;
+            -webkit-appearance: none;
+            height: 38px;
+            margin: 0;
+            margin-bottom: 5px;
+            color: #eee;
+            font-weight: bold;
+            -moz-transition: 0.6s;
+            -o-transition: 0.6s;
+            -webkit-transition: 0.6s;
+            transition: 0.6s;
+
+
+            &:focus {
+                color: $hover-color;
+                border-color: $hover-color;
+            }
+        }
+
+        input[type='submit'] {
+            border: 2px solid #eee;
+            background: none;
+            color: #eee;
+            padding: 8px 18px;
+            margin-top: 10px;
+            font-size: 18px;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-transition: 0.6s;
+            -o-transition: 0.6s;
+            -webkit-transition: 0.6s;
+            transition: 0.6s;
+
+            &:hover {
+                color: $hover-color;
+                border-color: $hover-color;
+            }
+        }
+
+        .field-validation-error {
+            color: white;
+        }
+    }
+
+    .call-result {
+        p {
+            font-size: 18px;
+            font-style: italic;
+            color: ghostwhite;
+        }
+
+        a {
+            color: white;
+            border-color: white;
+            -webkit-appearance: none;
+            -moz-transition: 0.6s;
+            -o-transition: 0.6s;
+            -webkit-transition: 0.6s;
+            transition: 0.6s;
+
+            &:hover {
+                color: $hover-color;
+                border-color: $hover-color;
+            }
+        }
     }
 }

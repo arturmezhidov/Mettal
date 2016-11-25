@@ -116,10 +116,9 @@ table.table-image textarea {
   background-size: cover;
   background-color: rgba(0, 0, 0, 0.5); }
   .navbar .navbar-brand img {
-    margin-top: 9px;
-    margin-bottom: -3px; }
+    width: 150px; }
   .navbar .navbar-nav {
-    margin: 28px 0 0 50px; }
+    margin: 23px 0 0 0px; }
   .navbar .nav .open > a,
   .navbar .nav .open > a:hover,
   .navbar .nav .open > a:focus {
@@ -210,13 +209,15 @@ table.table-image textarea {
       display: inline-block; }
     .categories .items .controls {
       font-weight: bold;
-      margin-top: 0;
-      color: #AAA; }
+      margin-top: 0; }
       .categories .items .controls a {
-        color: #AAA;
-        margin-right: 10px; }
+        color: #888;
+        margin-right: 10px;
+        margin-left: 10px; }
+        .categories .items .controls a:first-child {
+          margin-left: 0px; }
         .categories .items .controls a:last-child {
-          margin-left: 10px; }
+          margin-right: 0px; }
 
 .contacts-section {
   padding: 40px 0;
@@ -333,6 +334,8 @@ footer {
     font-size: 20px;
     font-family: 'Hair-2', arial;
     letter-spacing: 2px; }
+  footer .center.col-md-4 {
+    padding-left: 0 !important; }
 
 .category-details {
   padding: 60px 0; }
@@ -422,4 +425,66 @@ footer {
       color: brown; }
   .admin .html-content {
     margin-bottom: 20px; }
+
+.call-container .call-form input[type='text'] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font: 400 18px "Raleway", sans-serif;
+  padding: 4px 12px;
+  background: none;
+  border: 2px solid #eee;
+  width: 100%;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  height: 38px;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #eee;
+  font-weight: bold;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s; }
+  .call-container .call-form input[type='text']:focus {
+    color: #ffc000;
+    border-color: #ffc000; }
+
+.call-container .call-form input[type='submit'] {
+  border: 2px solid #eee;
+  background: none;
+  color: #eee;
+  padding: 8px 18px;
+  margin-top: 10px;
+  font-size: 18px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s; }
+  .call-container .call-form input[type='submit']:hover {
+    color: #ffc000;
+    border-color: #ffc000; }
+
+.call-container .call-form .field-validation-error {
+  color: white; }
+
+.call-container .call-result p {
+  font-size: 18px;
+  font-style: italic;
+  color: ghostwhite; }
+
+.call-container .call-result a {
+  color: white;
+  border-color: white;
+  -webkit-appearance: none;
+  -moz-transition: 0.6s;
+  -o-transition: 0.6s;
+  -webkit-transition: 0.6s;
+  transition: 0.6s; }
+  .call-container .call-result a:hover {
+    color: #ffc000;
+    border-color: #ffc000; }
 

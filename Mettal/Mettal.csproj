@@ -162,6 +162,7 @@
     <Compile Include="Config\AppConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CallbackController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Models\Entities\Manual.cs" />
     <Compile Include="Models\Entities\ManualCategory.cs" />
     <Compile Include="Models\Entities\Slide.cs" />
+    <Compile Include="Models\ViewModels\CallbackViewModel.cs" />
     <Compile Include="Models\ViewModels\ManualView.cs" />
     <Compile Include="Models\Entities\Mark.cs" />
     <Compile Include="Models\Entities\Product.cs" />
@@ -753,6 +755,8 @@
     <Content Include="Views\Product\View.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Positions.cshtml" />
+    <Content Include="Views\Callback\_CallForm.cshtml" />
+    <Content Include="Views\Callback\_CallbackResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

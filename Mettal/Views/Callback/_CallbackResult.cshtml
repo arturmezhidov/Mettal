@@ -1,0 +1,15 @@
+﻿@model bool
+
+<div class="call-container" id="call-container">
+    <div class="call-result">
+        @if (Model)
+        {
+            <p>Ваш заказ успешно принят!</p>
+        }
+        else
+        {
+            <p>Ошибка! Попробуйте еще раз!</p>
+        }
+        @Ajax.ActionLink("Новый заказ", "Form", "Callback", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.ReplaceWith, UpdateTargetId = "call-container" }, new { @class = "mbtn-primary" })
+    </div>
+</div>

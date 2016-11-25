@@ -10,26 +10,46 @@
     <div class="container">
         <h1 class="text-center">@Model.Category</h1>
         <br/>
-        <br/>
+        @if (ViewBag.IsAdmin)
+        {
+            <div class="text-right">
+                @Html.ActionLink("Добавить позицию", "Create", new { id = Model.CategoryId }, new { @class = "btn btn-default" })
+            </div>
+        }
+        <br />
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
                     @foreach (PositionMember iModel in Model.Positions)
                     {
-                        if (iModel.Title != "Id1")
+                        if (iModel.Title != "Id")
                         {
                             <th>@iModel.Title</th>
                         }
+                    }
+                    @if (ViewBag.IsAdmin)
+                    {
+                        <th>Действия</th>
                     }
                 </tr>
             </thead>
             <tbody>
                 @for (int i = 0; i < Model.RowsCount; i++)
                 {
-                    <tr>
+                    <tr id="tr-@i">
                         @foreach (PositionMember iModel in Model.Positions)
                         {
-                            <td>@iModel.Values[i].ToString()</td>
+                            if (iModel.Title != "Id")
+                            {
+                                <td>@iModel.Values[i].ToString()</td>
+                            }
+                        }
+                        @if (ViewBag.IsAdmin)
+                        {
+                            <td>
+                                @Html.ActionLink("Изменить", "Edit", new { id = Model.Positions.First(p => p.Title == "Id").Values[i] }, new { @class = "btn btn-default"})
+                                @Ajax.ActionLink("Удалить", "Delete", new { id = Model.Positions.First(p => p.Title == "Id").Values[i] }, new AjaxOptions { Confirm = "Вы действительно хотите удалить?", HttpMethod = "DELETE", InsertionMode = InsertionMode.ReplaceWith, UpdateTargetId = "tr-" + i }, new { @class = "btn btn-danger" })
+                            </td>
                         }
                     </tr>
                 }
