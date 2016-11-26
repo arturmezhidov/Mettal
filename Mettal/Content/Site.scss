@@ -209,6 +209,11 @@ table.table-image {
     .dropdown-menu {
         background: #888;
     }
+
+    .phone {
+        color: $hover-color;
+        font-size: 18px;
+    }
 }
 
 .categories {
@@ -699,6 +704,67 @@ footer {
             &:hover {
                 color: $hover-color;
                 border-color: $hover-color;
+            }
+        }
+    }
+}
+
+.company-name {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: 170px;
+    color: #FFF;
+    border-left: 2px solid $hover-color;
+    padding-left: 20px;
+
+    h1 {
+        font-size: 82px;
+        color: #FFF;
+        text-shadow: 3px 2px gray;
+    }
+
+    h3 {
+        font-size: 36px;
+        color: #FFF;
+        text-shadow: 2px 1px #222;
+    }
+}
+
+.callback-head {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    right: 170px;
+    width: 300px;
+
+    h3 {
+        color: #FFF;
+    }
+}
+
+.goto-products {
+    position: relative;
+    margin-top: -76px;
+    z-index: 1;
+    color: #FFF;
+    padding-bottom: 10px;
+
+    h3 {
+        margin: 0;
+
+       a {
+            color: #FFF;
+            font-size: 22px;
+            cursor: pointer;
+
+            &.glyphicon {
+                font-size: 30px;
+            }
+
+            &:hover {
+                color: $hover-color;
+                text-decoration: none;
             }
         }
     }

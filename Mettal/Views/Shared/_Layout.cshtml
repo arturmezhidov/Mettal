@@ -1,7 +1,7 @@
 ﻿@using Mettal.Models.Business
 @using Mettal.Models.ViewModels
 @{
-    AppSettings settings = (AppSettings) ViewBag.Settings;
+    AppSettings settings = (AppSettings)ViewBag.Settings;
 }
 
 <!DOCTYPE html>
@@ -60,6 +60,19 @@
                         </li>
                     }
                     @Html.Partial("_LoginPartial")
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (!string.IsNullOrEmpty(settings.Phone1))
+                    {
+                        <li class="phone">
+                            @settings.Phone1
+                            
+                            @if (!string.IsNullOrEmpty(settings.Phone2))
+                            {
+                                <br />@settings.Phone2
+                            }
+                        </li>
+                    }
                 </ul>
             </div>
         </div>
@@ -135,6 +148,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    
+
 </body>
+
 </html>
