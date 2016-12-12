@@ -179,6 +179,43 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PositionHelper.cs" />
+    <Compile Include="Migrations\201609251708183_InitialCreate.cs" />
+    <Compile Include="Migrations\201609251708183_InitialCreate.Designer.cs">
+      <DependentUpon>201609251708183_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609282123179_addTablenamesettings.cs" />
+    <Compile Include="Migrations\201609282123179_addTablenamesettings.Designer.cs">
+      <DependentUpon>201609282123179_addTablenamesettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609282127445_rename-product-settings-on-schema.cs" />
+    <Compile Include="Migrations\201609282127445_rename-product-settings-on-schema.Designer.cs">
+      <DependentUpon>201609282127445_rename-product-settings-on-schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610011316389_add-order-number-to-product-schema.cs" />
+    <Compile Include="Migrations\201610011316389_add-order-number-to-product-schema.Designer.cs">
+      <DependentUpon>201610011316389_add-order-number-to-product-schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610011415101_change-column-type-is___-in-product-schema.cs" />
+    <Compile Include="Migrations\201610011415101_change-column-type-is___-in-product-schema.Designer.cs">
+      <DependentUpon>201610011415101_change-column-type-is___-in-product-schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610062115545_asd.cs" />
+    <Compile Include="Migrations\201610062115545_asd.Designer.cs">
+      <DependentUpon>201610062115545_asd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610072244177_add-id.cs" />
+    <Compile Include="Migrations\201610072244177_add-id.Designer.cs">
+      <DependentUpon>201610072244177_add-id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610221156556_manual.cs" />
+    <Compile Include="Migrations\201610221156556_manual.Designer.cs">
+      <DependentUpon>201610221156556_manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611030752004_slide.cs" />
+    <Compile Include="Migrations\201611030752004_slide.Designer.cs">
+      <DependentUpon>201611030752004_slide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Business\AppSettings.cs" />
     <Compile Include="Models\Business\ProductModel.cs" />
@@ -768,6 +805,35 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609251708183_InitialCreate.resx">
+      <DependentUpon>201609251708183_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609282123179_addTablenamesettings.resx">
+      <DependentUpon>201609282123179_addTablenamesettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609282127445_rename-product-settings-on-schema.resx">
+      <DependentUpon>201609282127445_rename-product-settings-on-schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610011316389_add-order-number-to-product-schema.resx">
+      <DependentUpon>201610011316389_add-order-number-to-product-schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610011415101_change-column-type-is___-in-product-schema.resx">
+      <DependentUpon>201610011415101_change-column-type-is___-in-product-schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610062115545_asd.resx">
+      <DependentUpon>201610062115545_asd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610072244177_add-id.resx">
+      <DependentUpon>201610072244177_add-id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610221156556_manual.resx">
+      <DependentUpon>201610221156556_manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611030752004_slide.resx">
+      <DependentUpon>201611030752004_slide.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
